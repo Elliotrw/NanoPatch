@@ -1,13 +1,19 @@
 <script setup>
+import ValueTabs from './components/ValueTabs.vue'
 </script>
 
 <template>
   <header>
-    <div class="wrapper">
+    <img alt="Vue logo" class="logo" src="./assets/NanoPatch.png" />
+    <div class="greetings">
+      <h1 class="green">NanoPatch</h1>
     </div>
+    <!-- <div class="wrapper">
+    </div> -->
   </header>
 
   <main>
+    <ValueTabs />
   </main>
 </template>
 
@@ -19,6 +25,8 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
+  max-width: 75%;
+  max-height: 75%;
 }
 
 @media (min-width: 1024px) {
