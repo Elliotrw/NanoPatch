@@ -17,19 +17,39 @@
 </script>
 
 <template>
-  <div>
-    <h1>Nitrogen (N): {{N}} ppm</h1>
-    <h1>Phosphorus (P): {{P}} ppm</h1>
-    <h1>Potassium (K): {{K}} ppm</h1>
-  </div>
-
-  <div>
-    <h1>Temperature: {{T}}°C</h1>
-    <h1>Humidity: {{H}} gm⁻³</h1>
-    <h1>Moisture: {{M}}°C</h1>
+  <div style="font-size: 40px; width: fit-content;">
+    <div>
+      <div class="valueBox">
+        Nitrogen (N):&nbsp;
+        <li class="list-group-item list-group-item-success">{{N}} ppm</li>
+      </div>
+      <div class="valueBox">
+        Phosphorus (P):&nbsp;
+        <li class="list-group-item list-group-item-warning">{{P}} ppm</li>
+      </div>
+      <div class="valueBox">
+        Potassium (K):&nbsp;
+        <li class="list-group-item list-group-item-danger">{{K}} ppm</li>
+      </div>
+      <div class="valueBox">
+        Temperature:&nbsp;
+        <li class="list-group-item list-group-item-success">{{T}} °C</li>
+      </div>
+      <div class="valueBox">
+        Humidity:&nbsp;
+        <li class="list-group-item list-group-item-warning">{{H}} gm⁻³</li>
+      </div>
+      <div class="valueBox">
+        Moisture:&nbsp;
+        <li class="list-group-item list-group-item-danger">{{M}} °C</li>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
-
+.valueBox {
+  display: flex;
+  padding-bottom: 2%;
+}
 </style>
