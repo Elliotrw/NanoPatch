@@ -1,16 +1,17 @@
-<script setup>
-  const N = 0, P = 0, K = 0, T = 0, H = 0, M = 0;
-</script>
-
 <script>
   import axios from 'axios'
 
   export default {
+    data() {
+      return {
+        values: {0: {N:0}, 1: {P:0}, 2: {K:0}, 3: {T:0}, 4: {H:0}, 5: {M:0}},
+      }
+    },
     mounted() {
       axios
         .get('http://127.0.0.1:5000/values')
         .then((response) => {
-          console.log(response.data);
+          this.values = response.data
         })
     }
   }
@@ -21,27 +22,27 @@
     <div>
       <div class="valueBox">
         Nitrogen (N):&nbsp;
-        <li class="list-group-item list-group-item-success">{{N}} ppm</li>
+        <li class="list-group-item list-group-item-success">{{values[0].N}} ppm</li>
       </div>
       <div class="valueBox">
         Phosphorus (P):&nbsp;
-        <li class="list-group-item list-group-item-warning">{{P}} ppm</li>
+        <li class="list-group-item list-group-item-warning">{{values[1].P}} ppm</li>
       </div>
       <div class="valueBox">
         Potassium (K):&nbsp;
-        <li class="list-group-item list-group-item-danger">{{K}} ppm</li>
+        <li class="list-group-item list-group-item-danger">{{values[2].K}} ppm</li>
       </div>
       <div class="valueBox">
         Temperature:&nbsp;
-        <li class="list-group-item list-group-item-success">{{T}} °C</li>
+        <li class="list-group-item list-group-item-success">{{values[3].T}} °C</li>
       </div>
       <div class="valueBox">
         Humidity:&nbsp;
-        <li class="list-group-item list-group-item-warning">{{H}} gm⁻³</li>
+        <li class="list-group-item list-group-item-warning">{{values[4].H}} gm⁻³</li>
       </div>
       <div class="valueBox">
         Moisture:&nbsp;
-        <li class="list-group-item list-group-item-danger">{{M}} °C</li>
+        <li class="list-group-item list-group-item-danger">{{values[5].M}} °C</li>
       </div>
     </div>
   </div>
