@@ -5,9 +5,9 @@ import ValueTabs from './components/ValueTabs.vue'
 <template>
   <header>
     <img alt="Vue logo" class="logo" src="./assets/NanoPatch.png" />
-    <div class="greetings">
+    <!-- <div class="greetings">
       <h1 class="green">NanoPatch</h1>
-    </div>
+    </div> -->
     <!-- <div class="wrapper">
     </div> -->
   </header>
