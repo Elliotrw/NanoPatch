@@ -53,11 +53,11 @@ export default {
       </div>
       <div class="valueBox">
         Humidity:&nbsp;
-        <li class="list-group-item" v-bind:class="getClass(values[4].H, 0, 5, 10, 15)">{{ values[4].H }} gm⁻³</li>
+        <li class="list-group-item" v-bind:class="getClass(values[4].H, 0, 5, 10, 15)">{{ values[4].H }} %</li>
       </div>
       <div class="valueBox">
         Moisture:&nbsp;
-        <li class="list-group-item" v-bind:class="getClass(values[5].M, 0, 5, 10, 15)">{{ values[5].M }} °C</li>
+        <li class="list-group-item" v-bind:class="getClass(values[5].M, 0, 5, 10, 15)">{{ values[5].M }} %</li>
       </div>
     </div>
   </div>
