@@ -1,5 +1,5 @@
 <script setup>
-import ValueTabs from './components/ValueTabs.vue'
+import ValueTabs from "./components/ValueTabs.vue"
 </script>
 
 <template>
