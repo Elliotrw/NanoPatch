@@ -1,49 +1,79 @@
 <script setup>
-import ValueTabs from "./components/ValueTabs.vue"
+import ValueTabs from "./components/ValueTabs.vue";
+</script>
+
+<script>
+import MultiLineChart from './components/MultiLineChart.vue';
+
+export default {
+  components: {
+    MultiLineChart
+  },
+  data() {
+    return {
+      soilData: {
+        nitrogen: [10, 22, 15, 18, 25, 30, 35],
+        phosphorus: [5, 8, 10, 12, 20, 22, 25],
+        potassium: [8, 12, 13, 17, 23, 28, 33]
+      }
+    }
+  }
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/NanoPatch.png" />
-    <!-- <div class="greetings">
-      <h1 class="green">NanoPatch</h1>
-    </div> -->
-    <!-- <div class="wrapper">
-    </div> -->
-  </header>
-
-  <main>
-    <ValueTabs />
-  </main>
+  <div class="app-container">
+    <div class="top-section">
+      <div class="logo-container">
+        <img alt="Vue logo" src="./assets/NanoPatch.png" />
+      </div>
+      <div class="value-tabs-container">
+        <ValueTabs />
+      </div>
+    </div>
+    <div class="bottom-section">
+      <MultiLineChart :chart-data="soilData" />
+    </div>
+  </div>
+  
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-  max-width: 75%;
-  max-height: 75%;
+.top-section {
+  display: flex;
+  flex: 1;
+  /* position: relative; */
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.logo-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.logo-container img {
+  width: 35vw;
+  height: auto;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.value-tabs-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0.5;
 }
 </style>
