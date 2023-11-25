@@ -75,4 +75,11 @@ export default {
   display: flex;
   padding-bottom: 2%;
 }
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+  .allBoxes{
+    font-size: 1.6vh;
+  }
+}
 </style>
