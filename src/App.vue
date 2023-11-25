@@ -4,10 +4,12 @@ import ValueTabs from "./components/ValueTabs.vue";
 
 <script>
 import MultiLineChart from './components/MultiLineChart.vue';
+import MultiAxisChart from './components/MultiAxisChart.vue';
 
 export default {
   components: {
-    MultiLineChart
+    MultiLineChart,
+    MultiAxisChart
   },
   data() {
     return {
@@ -15,6 +17,11 @@ export default {
         nitrogen: [10, 22, 15, 18, 25, 30, 35],
         phosphorus: [5, 8, 10, 12, 20, 22, 25],
         potassium: [8, 12, 13, 17, 23, 28, 33]
+      },
+      thmData: {
+        temperature: [4, 15, 16, 18, 20, 10, 12],
+        humidity: [25, 12, 2, 22, 19, 16, 25],
+        moisture: [8, 12, 13, 33, 23, 28, 10]
       }
     }
   }
@@ -33,7 +40,7 @@ export default {
     </div>
     <div class="bottom-section">
       <MultiLineChart :chart-data="npkData" />
-      <MultiLineChart :chart-data="npkData" />
+      <MultiAxisChart :chart-data="thmData" />
     </div>
   </div>
 </template>
