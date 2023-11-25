@@ -3,6 +3,7 @@ import ValueTabs from "./components/ValueTabs.vue";
 </script>
 
 <script>
+import axios from "axios"
 import MultiLineChart from './components/MultiLineChart.vue';
 import MultiAxisChart from './components/MultiAxisChart.vue';
 
@@ -11,7 +12,18 @@ export default {
     MultiLineChart,
     MultiAxisChart
   },
+  mounted() {
+    this.getPastValues();
+  },
   methods: {
+    getPastValues() {
+      axios
+        .get('http://127.0.0.1:5000/past-values')
+        .then((response) => {
+          this.npkData = response.data.npkData
+          this.thmData = response.data.thmData
+        })
+    },
     getPastSevenDays() {
       const dates = [];
       for (let i = 6; i >= 0; i--) {
@@ -25,16 +37,8 @@ export default {
   },
   data() {
     return {
-      npkData: {
-        nitrogen: [10, 22, 15, 18, 25, 30, 35],
-        phosphorus: [5, 8, 10, 12, 20, 22, 25],
-        potassium: [8, 12, 13, 17, 23, 28, 33]
-      },
-      thmData: {
-        temperature: [4, 15, 16, 18, 20, 10, 12],
-        humidity: [25, 12, 2, 22, 19, 16, 25],
-        moisture: [8, 12, 13, 33, 23, 28, 10]
-      }
+      npkData: null,
+      thmData: null
     }
   }
 }
@@ -51,8 +55,8 @@ export default {
       </div>
     </div>
     <div class="bottom-section">
-      <MultiLineChart :chart-data="npkData" :x-axis-data=this.getPastSevenDays() />
-      <MultiAxisChart :chart-data="thmData" :x-axis-data=this.getPastSevenDays() />
+      <MultiLineChart v-if="npkData" :chart-data="npkData" :x-axis-data=this.getPastSevenDays() />
+      <MultiAxisChart v-if="thmData" :chart-data="thmData" :x-axis-data=this.getPastSevenDays() />
     </div>
   </div>
 </template>
