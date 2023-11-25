@@ -14,13 +14,17 @@ export default {
             type: Object,
             required: true
         },
+        xAxisData: {
+            type: Array,
+            required: true
+        },
     },
     mounted() {
         const ctx = this.$refs.multiLineChart.getContext('2d');
         new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+                labels: this.xAxisData,
                 datasets: [
                     {
                         label: 'Temperature',

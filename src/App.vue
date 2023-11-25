@@ -11,6 +11,18 @@ export default {
     MultiLineChart,
     MultiAxisChart
   },
+  methods: {
+    getPastSevenDays() {
+      const dates = [];
+      for (let i = 6; i >= 0; i--) {
+        const date = new Date();
+        date.setDate(date.getDate() - i);
+        const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}`;
+        dates.push(formattedDate);
+      }
+      return dates;
+    }
+  },
   data() {
     return {
       npkData: {
@@ -39,8 +51,8 @@ export default {
       </div>
     </div>
     <div class="bottom-section">
-      <MultiLineChart :chart-data="npkData" />
-      <MultiAxisChart :chart-data="thmData" />
+      <MultiLineChart :chart-data="npkData" :x-axis-data=this.getPastSevenDays() />
+      <MultiAxisChart :chart-data="thmData" :x-axis-data=this.getPastSevenDays() />
     </div>
   </div>
 </template>
@@ -55,7 +67,6 @@ export default {
 .top-section {
   display: flex;
   flex: 1;
-  /* position: relative; */
 }
 
 .logo-container {
