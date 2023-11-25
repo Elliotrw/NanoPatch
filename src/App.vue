@@ -11,7 +11,7 @@ export default {
   },
   data() {
     return {
-      soilData: {
+      npkData: {
         nitrogen: [10, 22, 15, 18, 25, 30, 35],
         phosphorus: [5, 8, 10, 12, 20, 22, 25],
         potassium: [8, 12, 13, 17, 23, 28, 33]
@@ -32,10 +32,10 @@ export default {
       </div>
     </div>
     <div class="bottom-section">
-      <MultiLineChart :chart-data="soilData" />
+      <MultiLineChart :chart-data="npkData" />
+      <MultiLineChart :chart-data="npkData" />
     </div>
   </div>
-  
 </template>
 
 <style scoped>
