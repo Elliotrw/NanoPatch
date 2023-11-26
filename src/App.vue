@@ -1,47 +1,123 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import ValueTabs from "./components/ValueTabs.vue";
+</script>
+
+<script>
+import axios from "axios"
+import MultiLineChart from './components/MultiLineChart.vue';
+import MultiAxisChart from './components/MultiAxisChart.vue';
+
+export default {
+  components: {
+    MultiLineChart,
+    MultiAxisChart
+  },
+  mounted() {
+    this.getPastValues();
+  },
+  created() {
+    this.pastSevenDaysData = this.getPastSevenDays();
+  },
+  methods: {
+    getPastValues() {
+      axios
+        .get('http://127.0.0.1:5000/past-values')
+        .then((response) => {
+          this.npkData = response.data.npkData
+          this.thmData = response.data.thmData
+        })
+    },
+    getPastSevenDays() {
+      const dates = [];
+      for (let i = 6; i >= 0; i--) {
+        const date = new Date();
+        date.setDate(date.getDate() - i);
+        const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}`;
+        dates.push(formattedDate);
+      }
+      return dates;
+    }
+  },
+  data() {
+    return {
+      pastSevenDaysData: [],
+      npkData: null,
+      thmData: null
+    }
+  }
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="app-container">
+    <div class="top-section">
+      <div class="logo-container">
+        <img alt="Vue logo" src="./assets/NanoPatch.png" />
+      </div>
+      <div class="value-tabs-container">
+        <ValueTabs />
+      </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <div class="bottom-section">
+      <MultiLineChart v-if="npkData" :chart-data="npkData" :x-axis-data=pastSevenDaysData />
+      <MultiAxisChart v-if="thmData" :chart-data="thmData" :x-axis-data=pastSevenDaysData />
+    </div>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.top-section {
+  display: flex;
+  flex: 1;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+.logo-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container img {
+  width: 35vw;
+  height: auto;
+}
+
+.value-tabs-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0.5;
+  gap: 10px; /* Adds a gap between the Graph components */
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+  .bottom-section {
+    flex-direction: column; /* Stack the Graph components */
+    gap: 0; /* Removes the gap when stacked vertically */
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  .logo-container img {
+    width: 50vw; /* Adjust logo size for smaller screens */
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  .value-tabs-container {
+    right: 10%;
+    width: 80%;
   }
 }
 </style>
