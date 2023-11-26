@@ -1,6 +1,13 @@
 # NanoPatch
 
-This template should help get you started developing with Vue 3 in Vite.
+Run deployment bash script (if `dist` folder is not present) \
+`./deploy.sh`
+
+Install required packages \
+`pip install -r requirements.txt`
+
+Run NanoPatch UI \
+`flask run`
 
 ## Recommended IDE Setup
 
