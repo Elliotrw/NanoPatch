@@ -15,6 +15,9 @@ export default {
   mounted() {
     this.getPastValues();
   },
+  created() {
+    this.pastSevenDaysData = this.getPastSevenDays();
+  },
   methods: {
     getPastValues() {
       axios
@@ -37,6 +40,7 @@ export default {
   },
   data() {
     return {
+      pastSevenDaysData: [],
       npkData: null,
       thmData: null
     }
@@ -55,8 +59,8 @@ export default {
       </div>
     </div>
     <div class="bottom-section">
-      <MultiLineChart v-if="npkData" :chart-data="npkData" :x-axis-data=this.getPastSevenDays() />
-      <MultiAxisChart v-if="thmData" :chart-data="thmData" :x-axis-data=this.getPastSevenDays() />
+      <MultiLineChart v-if="npkData" :chart-data="npkData" :x-axis-data=pastSevenDaysData />
+      <MultiAxisChart v-if="thmData" :chart-data="thmData" :x-axis-data=pastSevenDaysData />
     </div>
   </div>
 </template>
