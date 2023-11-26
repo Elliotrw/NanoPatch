@@ -37,27 +37,27 @@ export default {
     <div>
       <div class="valueBox">
         Nitrogen (N):&nbsp;
-        <li class="list-group-item" v-bind:class="getClass(values[0].N, 0, 5, 10, 15)">{{ values[0].N }} ppm</li>
+        <li class="list-group-item" v-bind:class="getClass(values[0].N, 80, 100, 150, 170)">{{ values[0].N }} ppm</li>
       </div>
       <div class="valueBox">
         Phosphorus (P):&nbsp;
-        <li class="list-group-item" v-bind:class="getClass(values[1].P, 0, 5, 10, 15)">{{ values[1].P }} ppm</li>
+        <li class="list-group-item" v-bind:class="getClass(values[1].P, 80, 100, 150, 170)">{{ values[1].P }} ppm</li>
       </div>
       <div class="valueBox">
         Potassium (K):&nbsp;
-        <li class="list-group-item" v-bind:class="getClass(values[2].K, 0, 5, 10, 15)">{{ values[2].K }} ppm</li>
+        <li class="list-group-item" v-bind:class="getClass(values[2].K, 80, 100, 150, 170)">{{ values[2].K }} ppm</li>
       </div>
       <div class="valueBox">
         Temperature:&nbsp;
-        <li class="list-group-item" v-bind:class="getClass(values[3].T, 0, 5, 10, 15)">{{ values[3].T }} °C</li>
+        <li class="list-group-item" v-bind:class="getClass(values[3].T, 12, 15, 22, 25)">{{ values[3].T }} °C</li>
       </div>
       <div class="valueBox">
         Humidity:&nbsp;
-        <li class="list-group-item" v-bind:class="getClass(values[4].H, 0, 5, 10, 15)">{{ values[4].H }} %</li>
+        <li class="list-group-item" v-bind:class="getClass(values[4].H, 30, 40, 60, 70)">{{ values[4].H }} %</li>
       </div>
       <div class="valueBox">
         Moisture:&nbsp;
-        <li class="list-group-item" v-bind:class="getClass(values[5].M, 0, 5, 10, 15)">{{ values[5].M }} %</li>
+        <li class="list-group-item" v-bind:class="getClass(values[5].M, 30, 40, 60, 70)">{{ values[5].M }} %</li>
       </div>
     </div>
   </div>
