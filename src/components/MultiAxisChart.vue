@@ -1,6 +1,6 @@
 <template>
     <div class="chart-container" style="position: relative; height:40vh; width:80vw">
-        <canvas ref="multiLineChart"></canvas>
+        <canvas ref="multiAxisChart"></canvas>
     </div>
 </template>
   
@@ -20,7 +20,7 @@ export default {
         },
     },
     mounted() {
-        const ctx = this.$refs.multiLineChart.getContext('2d');
+        const ctx = this.$refs.multiAxisChart.getContext('2d');
         new Chart(ctx, {
             type: 'line',
             data: {
