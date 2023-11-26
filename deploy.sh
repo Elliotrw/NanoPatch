@@ -43,6 +43,6 @@ if [ ! -f "app.py" ]; then
 fi
 
 # Create a zip file
-zip -r demo.zip requirements.txt app.py dist
+zip -r demo.zip requirements.txt app.py db_sqlite.py dist
 
 echo "Archive 'demo.zip' created successfully."

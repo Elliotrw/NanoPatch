@@ -1,6 +1,8 @@
 from flask import Flask, jsonify, render_template, send_from_directory
 from flask_cors import CORS
 
+from db_sqlite import read_latest_entry_as_json
+
 app = Flask(__name__, static_folder="./dist/assets", template_folder="./dist")
 CORS(app)
 
@@ -12,8 +14,7 @@ def main():
 
 @app.route("/values")
 def values():
-    values = [{"N": 10}, {"P": 11}, {"K": 12}, {"T": 5}, {"H": 6}, {"M": 7}]
-    return jsonify(values)
+    return read_latest_entry_as_json()
 
 @app.route("/past-values")
 def pastValues():
