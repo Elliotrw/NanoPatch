@@ -83,8 +83,5 @@ export default {
 </script>
 
 <style scoped>
-.chart-container {
-    /* Your styles here */
-}
 </style>
   
