@@ -19,14 +19,14 @@ def values():
 @app.route("/past-values")
 def pastValues():
     past_values = {"npkData": {
-        "nitrogen": [10, 22, 15, 18, 25, 30, 35],
-        "phosphorus": [5, 8, 10, 12, 20, 22, 25],
-        "potassium": [8, 12, 13, 17, 23, 28, 33]
+        "nitrogen": [120, 118, 119, 121, 120, 122, 120],
+        "phosphorus": [110, 112, 111, 113, 110, 112, 111],
+        "potassium": [115, 116, 117, 115, 114, 116, 117]
       },
       "thmData": {
-        "temperature": [4, 15, 16, 18, 20, 10, 12],
-        "humidity": [25, 12, 2, 22, 19, 16, 25],
-        "moisture": [8, 12, 13, 33, 23, 28, 10]
+        "temperature": [18, 19, 20, 18, 17, 18, 19],
+        "humidity": [50, 52, 53, 50, 49, 51, 52],
+        "moisture": [40, 42, 45, 43, 41, 40, 44]
       }}
     return jsonify(past_values)
 
