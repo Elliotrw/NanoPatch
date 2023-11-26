@@ -43,6 +43,6 @@ if [ ! -f "app.py" ]; then
 fi
 
 # Create a zip file
-zip -r archive.zip requirements.txt app.py dist
+zip -r demo.zip requirements.txt app.py dist
 
-echo "Archive 'archive.zip' created successfully."
+echo "Archive 'demo.zip' created successfully."
