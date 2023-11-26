@@ -33,7 +33,7 @@ export default {
 </script>
 
 <template>
-  <div style="font-size: 40px; width: fit-content;">
+  <div class="allBoxes">
     <div>
       <div class="valueBox">
         Nitrogen (N):&nbsp;
@@ -64,8 +64,22 @@ export default {
 </template>
 
 <style scoped>
+.allBoxes{
+  /* font-size: 40px; */
+  font-size: 2vw;
+  width: fit-content;
+  /* padding-top: 5%; */
+}
+
 .valueBox {
   display: flex;
   padding-bottom: 2%;
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+  .allBoxes{
+    font-size: 1.6vh;
+  }
 }
 </style>
