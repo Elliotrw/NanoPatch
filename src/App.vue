@@ -21,7 +21,7 @@ export default {
   methods: {
     getPastValues() {
       axios
-        .get('http://127.0.0.1:5000/past-values')
+        .get('/past-values')
         .then((response) => {
           this.npkData = response.data.npkData
           this.thmData = response.data.thmData

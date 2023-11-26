@@ -14,7 +14,7 @@ export default {
   methods: {
     getValues() {
       axios
-        .get('http://127.0.0.1:5000/values')
+        .get('/values')
         .then((response) => {
           this.values = response.data
         })
