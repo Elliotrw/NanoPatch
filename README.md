@@ -6,8 +6,11 @@ Run deployment bash script (if `dist` folder is not present) \
 Install required packages \
 `pip install -r requirements.txt`
 
-Run NanoPatch UI \
+Run NanoPatch UI Locally \
 `flask run`
+
+Top make Flask server visible to network \
+`flask run --host=0.0.0.0`
 
 ## Recommended IDE Setup
 
