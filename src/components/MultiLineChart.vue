@@ -52,7 +52,6 @@ export default {
             options: {
                 scales: {
                     y: {
-                        beginAtZero: true,
                         title: {
                             display: true,
                             text: 'ppm'
