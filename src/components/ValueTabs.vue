@@ -1,6 +1,6 @@
 <script>
-  import axios from 'axios'
-  import * as bootstrap from 'bootstrap/dist/js/bootstrap'
+import axios from 'axios'
+import * as bootstrap from 'bootstrap/dist/js/bootstrap'
 
 export default {
   data() {
@@ -45,45 +45,51 @@ export default {
       <div class="valueBox">
         Nitrogen (N):&nbsp;
         <li class="list-group-item"
-        v-bind:class="getClass(values[0].N, this.rangeNPK[0], this.rangeNPK[1], this.rangeNPK[2], this.rangeNPK[3])"
-        data-bs-toggle="tooltip" :data-bs-title="'Ideal conditions ' + this.rangeNPK[1] + '-' + this.rangeNPK[2]">{{ values[0].N }} ppm</li>
+          v-bind:class="getClass(values[0].N, this.rangeNPK[0], this.rangeNPK[1], this.rangeNPK[2], this.rangeNPK[3])"
+          data-bs-toggle="tooltip" :data-bs-title="'Ideal conditions ' + this.rangeNPK[1] + '-' + this.rangeNPK[2]">{{
+            values[0].N }} ppm</li>
       </div>
       <div class="valueBox">
         Phosphorus (P):&nbsp;
         <li class="list-group-item"
-        v-bind:class="getClass(values[1].P, this.rangeNPK[0], this.rangeNPK[1], this.rangeNPK[2], this.rangeNPK[3])"
-        data-bs-toggle="tooltip" :data-bs-title="'Ideal conditions ' + this.rangeNPK[1] + '-' + this.rangeNPK[2]">{{ values[1].P }} ppm</li>
+          v-bind:class="getClass(values[1].P, this.rangeNPK[0], this.rangeNPK[1], this.rangeNPK[2], this.rangeNPK[3])"
+          data-bs-toggle="tooltip" :data-bs-title="'Ideal conditions ' + this.rangeNPK[1] + '-' + this.rangeNPK[2]">{{
+            values[1].P }} ppm</li>
       </div>
       <div class="valueBox">
         Potassium (K):&nbsp;
         <li class="list-group-item"
-        v-bind:class="getClass(values[2].K, this.rangeNPK[0], this.rangeNPK[1], this.rangeNPK[2], this.rangeNPK[3])"
-        data-bs-toggle="tooltip" :data-bs-title="'Ideal conditions ' + this.rangeNPK[1] + '-' + this.rangeNPK[2]">{{ values[2].K }} ppm</li>
+          v-bind:class="getClass(values[2].K, this.rangeNPK[0], this.rangeNPK[1], this.rangeNPK[2], this.rangeNPK[3])"
+          data-bs-toggle="tooltip" :data-bs-title="'Ideal conditions ' + this.rangeNPK[1] + '-' + this.rangeNPK[2]">{{
+            values[2].K }} ppm</li>
       </div>
       <div class="valueBox">
         Temperature:&nbsp;
         <li class="list-group-item"
-        v-bind:class="getClass(values[3].T, this.rangeT[0], this.rangeT[1], this.rangeT[2], this.rangeT[3])"
-        data-bs-toggle="tooltip" :data-bs-title="'Ideal conditions ' + this.rangeT[1] + '-' + this.rangeT[2]">{{ values[3].T }} °C</li>
+          v-bind:class="getClass(values[3].T, this.rangeT[0], this.rangeT[1], this.rangeT[2], this.rangeT[3])"
+          data-bs-toggle="tooltip" :data-bs-title="'Ideal conditions ' + this.rangeT[1] + '-' + this.rangeT[2]">{{
+            values[3].T }} °C</li>
       </div>
       <div class="valueBox">
         Humidity:&nbsp;
         <li class="list-group-item"
-        v-bind:class="getClass(values[4].H, this.rangeHM[0], this.rangeHM[1], this.rangeHM[2], this.rangeHM[3])"
-        data-bs-toggle="tooltip" :data-bs-title="'Ideal conditions ' + this.rangeHM[1] + '-' + this.rangeHM[2]">{{ values[4].H }} %</li>
+          v-bind:class="getClass(values[4].H, this.rangeHM[0], this.rangeHM[1], this.rangeHM[2], this.rangeHM[3])"
+          data-bs-toggle="tooltip" :data-bs-title="'Ideal conditions ' + this.rangeHM[1] + '-' + this.rangeHM[2]">{{
+            values[4].H }} %</li>
       </div>
       <div class="valueBox">
         Moisture:&nbsp;
         <li class="list-group-item"
-        v-bind:class="getClass(values[5].M, this.rangeHM[0], this.rangeHM[1], this.rangeHM[2], this.rangeHM[3])"
-        data-bs-toggle="tooltip" :data-bs-title="'Ideal conditions ' + this.rangeHM[1] + '-' + this.rangeHM[2]">{{ values[5].M }} %</li>
+          v-bind:class="getClass(values[5].M, this.rangeHM[0], this.rangeHM[1], this.rangeHM[2], this.rangeHM[3])"
+          data-bs-toggle="tooltip" :data-bs-title="'Ideal conditions ' + this.rangeHM[1] + '-' + this.rangeHM[2]">{{
+            values[5].M }} %</li>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.allBoxes{
+.allBoxes {
   /* font-size: 40px; */
   font-size: 2vw;
   width: fit-content;
@@ -97,8 +103,7 @@ export default {
 
 /* Responsive adjustments for mobile screens */
 @media (max-width: 768px) {
-  .allBoxes{
+  .allBoxes {
     font-size: 1.6vh;
   }
-}
-</style>
+}</style>
