@@ -52,15 +52,15 @@ export default {
   <div class="app-container">
     <div class="top-section">
       <div class="logo-container">
-        <img alt="Vue logo" src="./assets/NanoPatch.png" />
+        <img alt="NanoPatch logo" src="./assets/NanoPatch.png" />
       </div>
       <div class="value-tabs-container">
         <ValueTabs />
       </div>
     </div>
     <div class="bottom-section">
-      <MultiLineChart v-if="npkData" :chart-data="npkData" :x-axis-data=pastSevenDaysData />
-      <MultiAxisChart v-if="thmData" :chart-data="thmData" :x-axis-data=pastSevenDaysData />
+      <MultiLineChart alt="NPK data line graph" v-if="npkData" :chart-data="npkData" :x-axis-data=pastSevenDaysData />
+      <MultiAxisChart alt="Temperature Humidity Moisture data line multi-axis graph" v-if="thmData" :chart-data="thmData" :x-axis-data=pastSevenDaysData />
     </div>
   </div>
 </template>
