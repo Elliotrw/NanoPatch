@@ -59,8 +59,9 @@ export default {
       </div>
     </div>
     <div class="bottom-section">
-      <MultiLineChart alt="NPK data line graph" v-if="npkData" :chart-data="npkData" :x-axis-data=pastSevenDaysData />
-      <MultiAxisChart alt="Temperature Humidity Moisture data line multi-axis graph" v-if="thmData" :chart-data="thmData" :x-axis-data=pastSevenDaysData />
+      <MultiLineChart aria-label="NPK data line graph" v-if="npkData" :chart-data="npkData" :x-axis-data=pastSevenDaysData />
+      <MultiAxisChart aria-label="Temperature Humidity Moisture data line multi-axis graph" v-if="thmData" :chart-data="thmData"
+        :x-axis-data=pastSevenDaysData />
     </div>
   </div>
 </template>
@@ -101,23 +102,26 @@ export default {
   justify-content: center;
   align-items: center;
   flex: 0.5;
-  gap: 10px; /* Adds a gap between the Graph components */
+  gap: 10px;
+  /* Adds a gap between the Graph components */
 }
 
 /* Responsive adjustments for mobile screens */
 @media (max-width: 768px) {
   .bottom-section {
-    flex-direction: column; /* Stack the Graph components */
-    gap: 0; /* Removes the gap when stacked vertically */
+    flex-direction: column;
+    /* Stack the Graph components */
+    gap: 0;
+    /* Removes the gap when stacked vertically */
   }
 
   .logo-container img {
-    width: 50vw; /* Adjust logo size for smaller screens */
+    width: 50vw;
+    /* Adjust logo size for smaller screens */
   }
 
   .value-tabs-container {
     right: 10%;
     width: 80%;
   }
-}
-</style>
+}</style>

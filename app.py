@@ -16,18 +16,19 @@ def main():
 def values():
     return read_latest_entry_as_json()
 
+
 @app.route("/past-values")
 def pastValues():
     past_values = {"npkData": {
         "nitrogen": [120, 118, 119, 121, 120, 122, 120],
         "phosphorus": [110, 112, 111, 113, 110, 112, 111],
         "potassium": [115, 116, 117, 115, 114, 116, 117]
-      },
-      "thmData": {
+    },
+        "thmData": {
         "temperature": [18, 19, 20, 18, 17, 18, 19],
         "humidity": [50, 52, 53, 50, 49, 51, 52],
         "moisture": [40, 42, 45, 43, 41, 40, 44]
-      }}
+    }}
     return jsonify(past_values)
 
 
