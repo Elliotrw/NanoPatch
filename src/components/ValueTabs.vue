@@ -16,7 +16,7 @@ export default {
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
     this.getValues();
-    setInterval(this.getValues, 5000);
+    setInterval(this.getValues, 7000);
   },
   methods: {
     getValues() {
