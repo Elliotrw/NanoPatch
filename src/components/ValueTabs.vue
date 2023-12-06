@@ -6,9 +6,11 @@ export default {
   data() {
     return {
       values: { 0: { N: 0 }, 1: { P: 0 }, 2: { K: 0 }, 3: { T: 0 }, 4: { H: 0 }, 5: { M: 0 } },
-      rangeNPK: [80, 100, 150, 170],
-      rangeT: [12, 15, 22, 25],
-      rangeHM: [30, 40, 60, 70],
+      rangeN: [20, 50, 70, 350],
+      rangeP: [9, 14, 150, 200],
+      rangeK: [100, 180, 600, 800],
+      rangeT: [6, 10, 12, 27],
+      rangeHM: [15, 50, 70, 85],
     }
   },
   mounted() {
@@ -45,25 +47,25 @@ export default {
       <div class="valueBox">
         Nitrogen (N):&nbsp;
         <li class="list-group-item"
-          v-bind:class="getClass(values[0].N, this.rangeNPK[0], this.rangeNPK[1], this.rangeNPK[2], this.rangeNPK[3])"
+          v-bind:class="getClass(values[0].N, this.rangeN[0], this.rangeN[1], this.rangeN[2], this.rangeN[3])"
           data-bs-toggle="tooltip"
-          :data-bs-title="'Ideal conditions: ' + this.rangeNPK[1] + '-' + this.rangeNPK[2] + ' ppm'">{{
+          :data-bs-title="'Ideal conditions: ' + this.rangeN[1] + '-' + this.rangeN[2] + ' ppm'">{{
             values[0].N }} ppm</li>
       </div>
       <div class="valueBox">
         Phosphorus (P):&nbsp;
         <li class="list-group-item"
-          v-bind:class="getClass(values[1].P, this.rangeNPK[0], this.rangeNPK[1], this.rangeNPK[2], this.rangeNPK[3])"
+          v-bind:class="getClass(values[1].P, this.rangeP[0], this.rangeP[1], this.rangeP[2], this.rangeP[3])"
           data-bs-toggle="tooltip"
-          :data-bs-title="'Ideal conditions: ' + this.rangeNPK[1] + '-' + this.rangeNPK[2] + ' ppm'">{{
+          :data-bs-title="'Ideal conditions: ' + this.rangeP[1] + '-' + this.rangeP[2] + ' ppm'">{{
             values[1].P }} ppm</li>
       </div>
       <div class="valueBox">
         Potassium (K):&nbsp;
         <li class="list-group-item"
-          v-bind:class="getClass(values[2].K, this.rangeNPK[0], this.rangeNPK[1], this.rangeNPK[2], this.rangeNPK[3])"
+          v-bind:class="getClass(values[2].K, this.rangeK[0], this.rangeK[1], this.rangeK[2], this.rangeK[3])"
           data-bs-toggle="tooltip"
-          :data-bs-title="'Ideal conditions: ' + this.rangeNPK[1] + '-' + this.rangeNPK[2] + ' ppm'">{{
+          :data-bs-title="'Ideal conditions: ' + this.rangeK[1] + '-' + this.rangeK[2] + ' ppm'">{{
             values[2].K }} ppm</li>
       </div>
       <div class="valueBox">
