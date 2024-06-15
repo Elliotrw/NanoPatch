@@ -1,4 +1,12 @@
 # NanoPatch
+
+A web application for the NanoPatch system as part of an Engineering Professional Studies group project. \
+This UI & API visually presents the nutrition of a plant with colour indicators as well as plotting trends of soil health over time.
+
+> NanoPatch represents a novel stride in agricultural technology, designed as a versatile and portable system for monitoring and managing plant environments. It’s core functionality involves capturing essential environmental data around plants and displaying these insights in an accessible, user-friendly manner. NanoPatch's adaptability makes it not only a tool for economically efficient and sustainable agricultural practices but also a valuable educational resource in urban settings, where traditional farming may not be accessible.
+
+> NanoPatch addresses the growing significance of vertical farming and its importance as a solution to farming insecurity caused by climate change. offering a solution that scales efficiently and integrates wireless data transmission accessible via a mobile device application.
+
 <img src="NanoPatch Web App Screenshot.png" alt="Alt text" width="800"/>
 
 ## Installations
