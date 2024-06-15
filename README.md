@@ -1,4 +1,7 @@
 # NanoPatch
+<img src="NanoPatch Web App Screenshot.png" alt="Alt text" width="800"/>
+
+## Installations
 
 Run deployment bash script (if `dist` folder is not present) \
 `./deploy.sh`
